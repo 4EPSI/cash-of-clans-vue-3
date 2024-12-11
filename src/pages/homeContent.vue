@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import items from '@/seeders/items.js'
 import UserCard from '@/components/UI/UserCard.vue';
 export default {
   components: {
@@ -19,22 +20,7 @@ export default {
   },
   data() {
     return {
-      items: [
-      {
-        id: 1,
-        title: 'HTML',
-        description: 'archer archer archer',
-        img: require('@/assets/img/HTML5.webp'),
-        lvl: 4
-      },
-      {
-        id: 2,
-        title: 'VUE',
-        description: 'wizard wizard wizard',
-        img: require('@/assets/img/Vue.js_Logo_2.svg.png'),
-        lvl: 5
-      }
-      ]
+      items
     }
   }
 }
