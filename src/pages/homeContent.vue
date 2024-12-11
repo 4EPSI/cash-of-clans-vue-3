@@ -3,7 +3,9 @@
     <h1>hello home</h1>
     <p>Edit me</p>
     <div v-for="item in items" :key="item.id" class="card_wrapper">
-      <UserCard :name="`${item.lvl} lvl`" :title="item.title" :description="item.description" />
+      <UserCard :name="`${item.lvl} lvl`" :title="item.title" :description="item.description">
+        {{ item.description }}
+      </UserCard>
     </div>
   </div>
 </template>
