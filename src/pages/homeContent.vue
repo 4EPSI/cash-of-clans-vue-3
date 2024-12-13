@@ -4,6 +4,7 @@
       <UserCard 
         :name="`${item.lvl} lvl`" 
         :title="item.title" 
+        :link="`/${item.alias}`"
         :imgUrl="item.img">
         {{ item.description }}
       </UserCard>

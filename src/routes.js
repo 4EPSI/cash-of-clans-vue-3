@@ -5,6 +5,7 @@ const routerHistory = createWebHashHistory();
 import HomePage from './pages/homeContent.vue';
 import AboutPage from './pages/aboutContent.vue'
 import noteFoundPage from "./pages/noteFound.vue";
+import Item from './pages/_itemAlias.vue'
 
 const routers = createRouter({
   history: routerHistory,
@@ -18,6 +19,11 @@ const routers = createRouter({
       path: '/about',
       name: 'about',
       component: AboutPage
+    },
+    {
+      path: '/:itemAlias',
+      name: 'itemAlias',
+      component: Item,
     },
     {
       // path: '/:PathMatch(.*)*',
