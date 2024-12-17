@@ -1,40 +1,40 @@
 <template>
-  <div class="md-body">
-    <div v-for="item in items" :key="item.id" class="card__wrapper">
+  <SwiperSlider :items="items">
+    <template v-slot:default="{ item }">
       <UserCard 
         :name="`${item.lvl} lvl`" 
         :title="item.title" 
-        :link="`/${item.alias}`"
-        :imgUrl="item.img">
+        :link="`/${item.alias}`" 
+        :imgUrl="item.img"
+      >
         <template v-slot:body>{{ item.description }}</template>
         <template v-slot:footer>
           <div class="card-stats">
-            <div 
-              v-for="(stat, index) in item.info" 
-              :key="index" 
-              class="one-third"
-              >
+            <div v-for="(stat, index) in item.info" :key="index" class="one-third">
               <div class="stat-value">{{ stat.value }}</div>
               <div class="stat">{{ stat.title }}</div>
             </div>
           </div>
         </template>
       </UserCard>
-    </div>
-  </div>
+    </template>
+  </SwiperSlider>
 </template>
 
 <script>
-import items from '@/seeders/items.js'
-import UserCard from '@/components/UI/UserCard.vue';
+import SwiperSlider from "@/components/SwiperSlider.vue";
+import UserCard from "@/components/UI/UserCard.vue";
+import items from "@/seeders/items.js";
+
 export default {
   components: {
-    UserCard
+    SwiperSlider,
+    UserCard,
   },
   data() {
     return {
-      items
-    }
-  }
-}
+      items,
+    };
+  },
+};
 </script>
