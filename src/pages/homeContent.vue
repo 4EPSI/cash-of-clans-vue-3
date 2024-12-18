@@ -1,5 +1,13 @@
 <template>
-  <SwiperSlider :items="items">
+  <SwiperSlider 
+    :items="items"
+    :breakpoints="{
+      320: { slidesPerView: 1, spaceBetween: 10 },
+      768: { slidesPerView: 2, spaceBetween: 20 },
+      1024: { slidesPerView: 3, spaceBetween: 30 },
+      1440: { slidesPerView: 4, spaceBetween: 40 },
+    }"
+    >
     <template v-slot:default="{ item }">
       <UserCard 
         :name="`${item.lvl} lvl`" 

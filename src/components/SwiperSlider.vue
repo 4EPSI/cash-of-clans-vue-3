@@ -13,6 +13,7 @@
     <swiper
       :slidesPerView="slidesPerView"
       :spaceBetween="spaceBetween"
+      :breakpoints="breakpoints"
       :pagination="{
         clickable: paginationClickable,
       }"
@@ -64,6 +65,10 @@ export default {
       type: Boolean,
       default: true,
     },
+    breakpoints: {
+      type: Object,
+      default: () => ({}),
+    }
   },
   data() {
     return {
