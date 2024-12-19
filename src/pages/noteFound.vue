@@ -9,6 +9,5 @@
 <style>
   .noteFound {
     text-align: center;
-    justify-content: center;
   }
 </style>

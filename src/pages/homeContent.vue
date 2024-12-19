@@ -17,12 +17,7 @@
       >
         <template v-slot:body>{{ item.description }}</template>
         <template v-slot:footer>
-          <div class="card-stats">
-            <div v-for="(stat, index) in item.info" :key="index" class="one-third">
-              <div class="stat-value">{{ stat.value }}</div>
-              <div class="stat">{{ stat.title }}</div>
-            </div>
-          </div>
+          <StatCard :stats="item.info" />
         </template>
       </UserCard>
     </template>
@@ -33,11 +28,13 @@
 import SwiperSlider from "@/components/SwiperSlider.vue";
 import UserCard from "@/components/UI/UserCard.vue";
 import items from "@/seeders/items.js";
+import StatCard from '@/components/UI/StatCard.vue'
 
 export default {
   components: {
     SwiperSlider,
     UserCard,
+    StatCard
   },
   data() {
     return {
